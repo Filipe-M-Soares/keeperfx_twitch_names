@@ -2390,7 +2390,7 @@ extern "C"
         // }
         {
             // TODO CREATURE store creature name seed somewhere in CreatureControl instead making it from other parameters
-            unsigned long *seed = creatng->creation_turn + creatng->index + (cctrl->blood_type << 8);
+            unsigned long* seed = creatng->creation_turn + creatng->index + (cctrl->blood_type << 8);
             //     // Get amount of nucleus
             //     int name_len;
             //     {
@@ -2435,14 +2435,26 @@ extern "C"
             //         }
             //         strcat(text,part);
             //     }
-            const char **starts;
+            const char** starts;
             long starts_len;
             starts = name_starts;
+            long name_lenght = sizeof(name_starts);
             starts_len = sizeof(name_starts) / sizeof(name_starts[0]);
             int n = LB_RANDOM(starts_len, &seed);
-            const char *part = starts[n];
-            text = buf_sprintf("%s", part);
-            strcat(text, part);
+            for (long starts_len = 0; starts_len < name_lenght; starts_len++)
+            {
+                int used[n] = { n };
+                if (used[n]==n)
+                {
+                    int n = LB_RANDOM(starts_len, &seed);
+                }
+                else {
+                    int used[n] = { n };
+                    const char* part = starts[n];
+                    text = buf_sprintf("%s", part);
+                    strcat(text, part);
+                }
+            }            
         }
         return text;
     }
