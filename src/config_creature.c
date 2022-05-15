@@ -2443,7 +2443,8 @@ extern "C"
             int n = LB_RANDOM(starts_len, &seed);
             for (long starts_len = 0; starts_len < name_lenght; starts_len++)
             {
-                int used[n] = { n };
+                int used[] = {};
+                used[n] = { n };
                 if (used[n]==n)
                 {
                     int n = LB_RANDOM(starts_len, &seed);
