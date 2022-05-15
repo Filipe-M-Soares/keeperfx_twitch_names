@@ -2390,7 +2390,7 @@ extern "C"
         // }
         {
             // TODO CREATURE store creature name seed somewhere in CreatureControl instead making it from other parameters
-            unsigned long* seed = creatng->creation_turn + creatng->index + (cctrl->blood_type << 8);
+            unsigned long *seed = creatng->creation_turn + creatng->index + (cctrl->blood_type << 8);
             //     // Get amount of nucleus
             //     int name_len;
             //     {
